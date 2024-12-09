@@ -50,7 +50,7 @@ public class JwtUtil {
         claims.put("user_id", userEntity.getUser_id());
         claims.put("user_name",userEntity.getUser_name());
         claims.put("interest", userEntity.getInterest());
-        claims.put("role", userEntity.getRole());
+        claims.put("roles", userEntity.getRole());
 
         return Jwts.builder()
                 .setClaims(claims)

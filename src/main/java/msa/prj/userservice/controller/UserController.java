@@ -28,9 +28,10 @@ public class UserController {
     @PostMapping("/login")
     @ResponseBody
     public ResponseEntity<String> login(UserEntity userEntity) {
+        System.out.println("here");
+        System.out.println(userEntity.toString());
         try {
             String token = userService.login(userEntity);
-            System.out.println("here");
             return ResponseEntity.ok(token);
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
